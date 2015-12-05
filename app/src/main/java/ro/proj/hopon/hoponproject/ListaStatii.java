@@ -1,11 +1,15 @@
 package ro.proj.hopon.hoponproject;
 
+import android.app.SearchManager;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -48,6 +52,20 @@ public class ListaStatii extends Activity {
 
         parsareJSON(findViewById(R.id.listViewStatii));
 
+        
+        //pentru cautare in lista...
+        Intent intent = getIntent();
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            cautaStatie(query);
+        }
+
+    }
+
+    private void cautaStatie(String query) {
+        SearchManager sm=(SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView sv=(SearchView)findViewById(R.id.searchLista);
+        sv.setSearchableInfo(sm.getSearchableInfo(getComponentName()));
     }
 
 
