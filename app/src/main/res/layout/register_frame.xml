@@ -24,7 +24,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:layout_marginBottom="20dp"
-            android:background="#ffffff"
+            android:background="@drawable/rounded_edges"
             android:hint="@string/username"
             android:singleLine="true" />
 
@@ -36,7 +36,7 @@
             android:layout_width="210dp"
             android:layout_height="30dp"
             android:layout_marginBottom="20dp"
-            android:background="#ffffff"
+            android:background="@drawable/rounded_edges"
             android:hint="@string/email"
             android:singleLine="true" />
 
@@ -48,7 +48,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:layout_marginBottom="20dp"
-            android:background="#ffffff"
+            android:background="@drawable/rounded_edges"
             android:hint="@string/password"
             android:singleLine="true" />
 
@@ -60,7 +60,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:layout_marginBottom="20dp"
-            android:background="#ffffff"
+            android:background="@drawable/rounded_edges"
             android:hint="@string/password"
             android:singleLine="true" />
 
