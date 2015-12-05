@@ -66,6 +66,8 @@ public class ListaStatii extends Activity {
         SearchManager sm=(SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView sv=(SearchView)findViewById(R.id.searchLista);
         sv.setSearchableInfo(sm.getSearchableInfo(getComponentName()));
+
+        //de implementat cautarea...
     }
 
 
@@ -102,6 +104,8 @@ public class ListaStatii extends Activity {
                 lv.setAdapter(myAdapter);
 
                 linlaHeaderProgress.setVisibility(View.GONE);
+
+                //to-do: research pt load mai rapid, pe mai multe threaduri or smth...
 
             }
 
