@@ -75,32 +75,14 @@ public class ListaStatii extends Activity {
 
 
         final ListView lv=(ListView)findViewById(R.id.listViewStatii);
-        final List<String> statii=new ArrayList<String>();
-        final List<String> autobuze=new ArrayList<String>();
-        final List<String> durate=new ArrayList<String>();
-
-
         final LinearLayout linlaHeaderProgress = (LinearLayout) findViewById(R.id.progressLayout);
 
         CititorJSON ob=new CititorJSON(){
             @Override
-            protected void onPostExecute(String s) {
+            protected void onPostExecute(Liste xyz) {
 
-                if(s!="") {
-                    String[] linii=s.split("\n");
-                    if(linii!=null) {
-                    for (int i = 0; i < linii.length; i++) {
-                        String[] obiecte = linii[i].split("-");
 
-                            statii.add(obiecte[0]);
-                            //autobuze.add(obiecte[1]);
-                            autobuze.add("300");
-                            durate.add("3 minute");
-                        }
-                    }
-                }
-
-                CustomAdapter myAdapter=new CustomAdapter(getApplicationContext(),statii,autobuze,durate);
+                CustomAdapter myAdapter=new CustomAdapter(getApplicationContext(),xyz.statii,xyz.autobuze,xyz.durate);
                 lv.setAdapter(myAdapter);
 
                 linlaHeaderProgress.setVisibility(View.GONE);

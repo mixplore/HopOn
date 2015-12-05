@@ -23,13 +23,15 @@ import java.util.List;
 /**
  * Created by Andreea on 04-Dec-15.
  */
-public class CititorJSON extends AsyncTask<String,Void,String> {
+public class CititorJSON extends AsyncTask<String,Void,Liste> {
 
 
     View textView=null;
 
     @Override
-    protected String doInBackground(String... params) {
+    protected Liste doInBackground(String... params) {
+
+        Liste xyz=new Liste();
 
         String listaObiecte="";
 
@@ -47,6 +49,8 @@ public class CititorJSON extends AsyncTask<String,Void,String> {
                 sb.append(linie);
             }
 
+
+
             String jsonText=sb.toString();
             JSONObject jo=new JSONObject(jsonText);
             JSONObject jo2=jo.getJSONObject("markers");
@@ -54,7 +58,9 @@ public class CititorJSON extends AsyncTask<String,Void,String> {
             for(int i=0;i<vector.length();i++)
             {
                 JSONObject item=vector.getJSONObject(i);
-                listaObiecte+=item.getString("title")+"-"+item.getString("body")+"\n";
+                xyz.statii.add(item.getString("title"));
+                xyz.autobuze.add(item.getString("body"));
+                xyz.durate.add("minute");
             }
 
 
@@ -70,27 +76,17 @@ public class CititorJSON extends AsyncTask<String,Void,String> {
 
 
 
-        return listaObiecte;
+        return xyz;
     }
 
 
     @Override
-    protected void onPostExecute(String s) {
+    protected void onPostExecute(Liste xyz) {
         ListView lv=(ListView)textView;
 
-        final List<String> statii=new ArrayList<String>();
-        final List<String> autobuze=new ArrayList<String>();
-        final List<String> durate=new ArrayList<String>();
 
-        String[] linii=s.split("\n");
-        for(int i=0;i<linii.length;i++){
-            String[] obiecte=linii[i].split("-");
-            statii.add(obiecte[0]);
-            autobuze.add(obiecte[1]);
-            durate.add("3 minute");
-        }
 
-        CustomAdapter myAdapter=new CustomAdapter(textView.getContext(),statii,autobuze,durate);
+        CustomAdapter myAdapter=new CustomAdapter(textView.getContext(),xyz.statii,xyz.autobuze,xyz.durate);
         lv.setAdapter(myAdapter);
 
     }
