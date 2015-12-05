@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/statieTextView"
+            android:id="@+id/statieTv"
+            android:layout_marginLeft="@dimen/abc_action_bar_overflow_padding_start_material"
+            android:textColor="@color/colorPrimaryDark"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/autobuzeTextView"
+            android:id="@+id/autobuzeTv"
+            android:layout_marginLeft="@dimen/abc_action_bar_overflow_padding_end_material"
+            android:textColor="@color/colorPrimaryDark"/>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/durataTextView"
+        android:id="@+id/durataTv"
+        android:layout_gravity="right" />
+
+</LinearLayout>
