@@ -39,8 +39,8 @@ public class Harta extends FragmentActivity implements OnMapReadyCallback {
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng ase = new LatLng(44.447403956105, 26.099379172034);
+        mMap.addMarker(new MarkerOptions().position(ase).title("ASE"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(ase));
     }
 }

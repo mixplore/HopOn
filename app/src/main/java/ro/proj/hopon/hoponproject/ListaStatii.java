@@ -2,7 +2,9 @@ package ro.proj.hopon.hoponproject;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -15,6 +17,7 @@ public class ListaStatii extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_statii);
+
 
         //plan: facem jumate harta jumate rute recente or smth like that...plus ceva sus de cautare :-??
 
@@ -56,6 +59,9 @@ public class ListaStatii extends Activity {
         final List<String> autobuze=new ArrayList<String>();
         final List<String> durate=new ArrayList<String>();
 
+
+        final LinearLayout linlaHeaderProgress = (LinearLayout) findViewById(R.id.progressLayout);
+
         CititorJSON ob=new CititorJSON(){
             @Override
             protected void onPostExecute(String s) {
@@ -76,6 +82,16 @@ public class ListaStatii extends Activity {
 
                 CustomAdapter myAdapter=new CustomAdapter(getApplicationContext(),statii,autobuze,durate);
                 lv.setAdapter(myAdapter);
+
+                linlaHeaderProgress.setVisibility(View.GONE);
+
+            }
+
+            @Override
+            protected void onPreExecute() {
+
+
+                linlaHeaderProgress.setVisibility(View.VISIBLE);
 
             }
         };

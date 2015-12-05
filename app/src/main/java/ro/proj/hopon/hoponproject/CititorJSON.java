@@ -2,6 +2,7 @@ package ro.proj.hopon.hoponproject;
 
 import android.os.AsyncTask;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -93,4 +94,7 @@ public class CititorJSON extends AsyncTask<String,Void,String> {
         lv.setAdapter(myAdapter);
 
     }
+
+
+
 }

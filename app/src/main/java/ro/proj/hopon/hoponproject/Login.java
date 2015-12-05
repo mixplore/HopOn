@@ -48,52 +48,52 @@ public class Login extends Activity {
                 final String pass=et2.getText().toString();
 
 
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-
-                        SoapObject so=new SoapObject("http://tempuri.org/","login");
-                        //primul parametru e NAMESPACE si al doilea e numele metodei (login)
-                        so.addProperty("username", user);
-                        so.addProperty("parola",pass);
-
-                        SoapSerializationEnvelope env= new SoapSerializationEnvelope(SoapEnvelope.VER11);
-                        env.dotNet=true;
-                        env.setOutputSoapObject(so);
-                        HttpTransportSE site=new HttpTransportSE("url.asmx");
-                        //parametrul este url-ul ceva de genul asta: "http://192.168.2.2:8080/LoginWebService/LoginWebService?WSDL"
-                        try {
-                            site.call("http://tempuri.org/login",env);
-                            //aici e namespace+numele metodei (login)
-                            int id_user=Integer.parseInt(env.getResponse().toString());
-                            if(id_user>=0)
-                            {
-                                Intent in = new Intent(getApplicationContext(),Homepage.class);
-                                in.putExtra("username",user);
-                                startActivity(in);
-                            }
-                            else
-                            {
-                                Toast.makeText(getApplicationContext(), "parola gresita", Toast.LENGTH_LONG);
-                            }
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        } catch (XmlPullParserException e) {
-                            e.printStackTrace();
-                        }
-
-
-                    }
-                }).start();
+//                new Thread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//
+//                        SoapObject so=new SoapObject("http://tempuri.org/","login");
+//                        //primul parametru e NAMESPACE si al doilea e numele metodei (login)
+//                        so.addProperty("username", user);
+//                        so.addProperty("parola",pass);
+//
+//                        SoapSerializationEnvelope env= new SoapSerializationEnvelope(SoapEnvelope.VER11);
+//                        env.dotNet=true;
+//                        env.setOutputSoapObject(so);
+//                        HttpTransportSE site=new HttpTransportSE("url.asmx");
+//                        //parametrul este url-ul ceva de genul asta: "http://192.168.2.2:8080/LoginWebService/LoginWebService?WSDL"
+//                        try {
+//                            site.call("http://tempuri.org/login",env);
+//                            //aici e namespace+numele metodei (login)
+//                            int id_user=Integer.parseInt(env.getResponse().toString());
+//                            if(id_user>=0)
+//                            {
+//                                Intent in = new Intent(getApplicationContext(),Homepage.class);
+//                                in.putExtra("username",user);
+//                                startActivity(in);
+//                            }
+//                            else
+//                            {
+//                                Toast.makeText(getApplicationContext(), "parola gresita", Toast.LENGTH_LONG);
+//                            }
+//                        } catch (IOException e) {
+//                            e.printStackTrace();
+//                        } catch (XmlPullParserException e) {
+//                            e.printStackTrace();
+//                        }
+//
+//
+//                    }
+//                }).start();
 
 
 
 
 
                 //if(user.equals("nume cautat in baza de date") si verificare match parola) {
-                //Intent intent = new Intent(getApplicationContext(), Homepage.class);
+                Intent intent = new Intent(getApplicationContext(), Homepage.class);
                 //intent.putExtra("username",user);
-                //startActivity(intent);
+                startActivity(intent);
                 //}
                 // else
                 // {
