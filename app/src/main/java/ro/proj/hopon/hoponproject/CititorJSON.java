@@ -94,7 +94,4 @@ public class CititorJSON extends AsyncTask<String,Void,String> {
         lv.setAdapter(myAdapter);
 
     }
-
-
-
 }

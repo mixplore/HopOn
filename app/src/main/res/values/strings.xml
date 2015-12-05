@@ -24,4 +24,5 @@
     <string name="hartaButon">Harta</string>
     <string name="login">Log in</string>
     <string name="search_hint">Cauta statie</string>
+    <string name="listaStatii">Lista statii</string>
 </resources>
