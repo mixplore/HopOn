@@ -8,10 +8,9 @@ import java.util.List;
  */
 public class Liste {
 
-    final List<String> statii=new ArrayList<String>();
-    final List<String> autobuze=new ArrayList<String>();
-    final List<String> durate=new ArrayList<String>();
-
-
+    List<String> statii=new ArrayList<String>();
+    List<String> autobuze=new ArrayList<String>();
+    List<String> durate=new ArrayList<String>();
+    
 
 }
