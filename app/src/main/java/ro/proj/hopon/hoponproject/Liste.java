@@ -11,6 +11,6 @@ public class Liste {
     List<String> statii=new ArrayList<String>();
     List<String> autobuze=new ArrayList<String>();
     List<String> durate=new ArrayList<String>();
-    
+
 
 }
