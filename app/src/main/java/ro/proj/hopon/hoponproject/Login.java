@@ -74,7 +74,8 @@ public class Login extends Activity {
                             }
                             else
                             {
-                                Toast.makeText(getApplicationContext(), "parola gresita", Toast.LENGTH_LONG);
+                                Toast.makeText(getApplicationContext(), "parola gresita", Toast.LENGTH_LONG).show();
+
                             }
                         } catch (IOException e) {
                             e.printStackTrace();
